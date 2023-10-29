@@ -14,6 +14,7 @@ cmp.setup({
         ['<Up>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
         ['<C-d>'] = cmp.mapping.confirm({ select = true }),
         ['<C-e>'] = cmp.mapping.close(),
+        ['<C-q>'] = cmp.mapping.close(),
     },
 })
 

@@ -18,15 +18,17 @@ require('packer').startup(function(use)
     use 'hrsh7th/cmp-path'
     use 'hrsh7th/cmp-cmdline'
     use 'hrsh7th/nvim-cmp'
+
     use {
         'nvim-telescope/telescope.nvim',
         requires = { {'nvim-lua/plenary.nvim'} }
     }
 
-    use 'mfussenegger/nvim-dap'
+    use {
+        "folke/lsp-trouble.nvim",
+        requires = "kyazdani42/nvim-web-devicons",
+    }
 
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-
-    use 'sbdchd/neoformat'
-
+    use 'vim-airline/vim-airline'
+    use 'vim-airline/vim-airline-themes'
 end)

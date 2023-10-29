@@ -94,30 +94,20 @@ _G.packer_plugins = {
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
+  ["lsp-trouble.nvim"] = {
+    loaded = true,
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-trouble.nvim",
+    url = "https://github.com/folke/lsp-trouble.nvim"
+  },
   ["melange-nvim"] = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\melange-nvim",
     url = "https://github.com/savq/melange-nvim"
   },
-  neoformat = {
-    loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\neoformat",
-    url = "https://github.com/sbdchd/neoformat"
-  },
   ["nvim-cmp"] = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
-  },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap",
-    url = "https://github.com/mfussenegger/nvim-dap"
-  },
-  ["nvim-dap-ui"] = {
-    loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-dap-ui",
-    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
@@ -128,6 +118,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-treesitter",
     url = "https://github.com/nvim-treesitter/nvim-treesitter"
+  },
+  ["nvim-web-devicons"] = {
+    loaded = true,
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\nvim-web-devicons",
+    url = "https://github.com/kyazdani42/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
@@ -143,6 +138,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
+  },
+  ["vim-airline"] = {
+    loaded = true,
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
+    url = "https://github.com/vim-airline/vim-airline"
+  },
+  ["vim-airline-themes"] = {
+    loaded = true,
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline-themes",
+    url = "https://github.com/vim-airline/vim-airline-themes"
   },
   ["vim-fugitive"] = {
     loaded = true,

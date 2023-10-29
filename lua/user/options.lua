@@ -6,6 +6,7 @@ opt.number = true
 opt.cursorline = true
 opt.termguicolors = true
 opt.signcolumn = "yes"
+opt.colorcolumn = "120"
 
 -- Text editing settings
 opt.wrap = true
@@ -37,6 +38,6 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Path settings
-vim.opt.wildmenu = true
-vim.opt.wildmode = "longest:full,full"
-vim.opt.path:append("**")
+opt.wildmenu = true
+opt.wildmode = "longest:full,full"
+opt.path:append("**")

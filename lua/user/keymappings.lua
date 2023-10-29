@@ -14,14 +14,20 @@ keymap('n', 'gk', '<C-w>k', opts)
 keymap('n', 'gl', '<C-w>l', opts)
 
 -- navigate terminals
-keymap("t", 'gh', "<C-\\><C-N><C-w>h", opts)
-keymap("t", 'gj', "<C-\\><C-N><C-w>j", opts)
-keymap("t", 'gk', "<C-\\><C-N><C-w>k", opts)
-keymap("t", 'gl', "<C-\\><C-N><C-w>l", opts)
+keymap('t', 'gh', "<C-\\><C-N><C-w>h", opts)
+keymap('t', 'gj', "<C-\\><C-N><C-w>j", opts)
+keymap('t', 'gk', "<C-\\><C-N><C-w>k", opts)
+keymap('t', 'gl', "<C-\\><C-N><C-w>l", opts)
+
+-- split
+keymap('n', '<leader>hts', ":split | terminal<CR>", opts) -- horizontal terminal
+keymap('n', '<leader>hs', ":split<CR>", opts) -- horizontal buffer
+keymap('n', '<leader>vts', ":vsplit | terminal<CR>", opts) -- vertical terminal
+keymap('n', '<leader>vs', ":vsplit<CR>", opts) -- vertical buffer
 
 -- navigate buffers
-keymap('n', 'L', ':bnext<CR>', opts)
-keymap('n', 'H', ':bprevious<CR>', opts)
+keymap('n', '<C-l>', ':bnext<CR>', opts)
+keymap('n', '<C-h>', ':bprevious<CR>', opts)
 
 -- resize window
 keymap('n', '<C-Up>', ':resize +2<CR>', opts)

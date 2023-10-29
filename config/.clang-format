@@ -3,7 +3,7 @@ AlignAfterOpenBracket: Align
 AlignArrayOfStructures: Right
 AlwaysBreakAfterReturnType: None
 AlignEscapedNewlines: Right
-AlignOperands: Align
+AlignOperands: DontAlign
 AlignTrailingComments: Leave
 AllowShortBlocksOnASingleLine: Empty
 AllowShortFunctionsOnASingleLine: InlineOnly
@@ -40,7 +40,7 @@ BreakBeforeTernaryOperators: true
 BreakConstructorInitializers: AfterColon
 BreakInheritanceList: BeforeColon
 BreakStringLiterals: true
-ColumnLimit: 120
+ColumnLimit: 0
 CompactNamespaces: false
 ContinuationIndentWidth: 4
 Cpp11BracedListStyle: false
@@ -57,6 +57,7 @@ IndentPPDirectives: BeforeHash
 IndentRequiresClause: false
 IndentWidth: 4
 IndentWrappedFunctionNames: true
+InsertNewlineAtEOF: true
 InsertTrailingCommas: Wrapped
 KeepEmptyLinesAtTheStartOfBlocks: true
 LambdaBodyIndentation: Signature
@@ -89,7 +90,6 @@ SpaceAfterLogicalNot: false
 SpaceAfterTemplateKeyword: true
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeCaseColon: false
-SpaceBeforeCaseColon: true
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeParens: Custom
