@@ -4,7 +4,7 @@ vim.g.localleader = ' '
 local opts = { noremap = true, silent = true }
 local keymap = vim.api.nvim_set_keymap
 
--- :Ex
+-- explorer
 keymap('n', '<leader>e', ':Ex<CR>', opts)
 
 -- navigate windows
@@ -21,9 +21,13 @@ keymap('t', 'gl', "<C-\\><C-N><C-w>l", opts)
 
 -- split
 keymap('n', '<leader>hts', ":split | terminal<CR>", opts) -- horizontal terminal
-keymap('n', '<leader>hs', ":split<CR>", opts) -- horizontal buffer
 keymap('n', '<leader>vts', ":vsplit | terminal<CR>", opts) -- vertical terminal
+
+keymap('n', '<leader>hs', ":split<CR>", opts) -- horizontal buffer
 keymap('n', '<leader>vs', ":vsplit<CR>", opts) -- vertical buffer
+
+keymap('n', '<leader>he', ":Sexplore<CR>", opts) -- horizontal explorer
+keymap('n', '<leader>ve', ":Vexplore<CR>", opts) -- vertical explorer
 
 -- navigate buffers
 keymap('n', '<C-l>', ':bnext<CR>', opts)
