@@ -1,5 +1,4 @@
 vim.cmd [[
-    let g:airline#extensions#branch#enabled = 1
     let g:airline#extensions#nvimlsp#enabled = 1
 
     let g:airline_theme = 'luna'
