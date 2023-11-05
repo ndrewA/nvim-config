@@ -74,6 +74,11 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  catppuccin = {
+    loaded = true,
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\catppuccin",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["cmp-nvim-lsp"] = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\cmp-nvim-lsp",
@@ -84,10 +89,10 @@ _G.packer_plugins = {
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lsp-trouble.nvim",
     url = "https://github.com/folke/lsp-trouble.nvim"
   },
-  ["melange-nvim"] = {
+  ["lualine.nvim"] = {
     loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\melange-nvim",
-    url = "https://github.com/savq/melange-nvim"
+    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
   },
   ["nvim-cmp"] = {
     loaded = true,
@@ -123,16 +128,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
-  },
-  ["vim-airline"] = {
-    loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline",
-    url = "https://github.com/vim-airline/vim-airline"
-  },
-  ["vim-airline-themes"] = {
-    loaded = true,
-    path = "C:\\Users\\andre\\AppData\\Local\\nvim-data\\site\\pack\\packer\\start\\vim-airline-themes",
-    url = "https://github.com/vim-airline/vim-airline-themes"
   }
 }
 

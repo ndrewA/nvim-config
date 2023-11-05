@@ -34,7 +34,7 @@ augroup END
 vim.api.nvim_exec([[
 augroup auto_pragma_once
   autocmd!
-  autocmd BufNewFile *.h,*.hpp silent! 0put =['#pragma once', '']
+  autocmd BufNewFile *.h,*h.in,*.hpp silent! 0put =['#pragma once', '']
 augroup END
 ]], false)
 

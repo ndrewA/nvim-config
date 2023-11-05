@@ -1,2 +1,5 @@
-vim.opt.termguicolors = true
-vim.cmd.colorscheme 'melange'
+require("catppuccin").setup({
+    transparent_background = true,
+})
+
+vim.cmd[[colorscheme catppuccin]]

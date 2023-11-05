@@ -63,7 +63,7 @@ KeepEmptyLinesAtTheStartOfBlocks: true
 LambdaBodyIndentation: Signature
 Language: Cpp
 MaxEmptyLinesToKeep: 2
-NamespaceIndentation: All
+NamespaceIndentation: None
 ObjCSpaceAfterProperty: false
 PackConstructorInitializers: NextLine
 PointerAlignment: Left
@@ -83,6 +83,7 @@ ReflowComments: true
 RequiresClausePosition: OwnLine
 RequiresExpressionIndentation: OuterScope
 SeparateDefinitionBlocks: Leave
+ShortNamespaceLines: 0
 SortIncludes: CaseInsensitive
 SortUsingDeclarations: Never
 SpaceAfterCStyleCast: false

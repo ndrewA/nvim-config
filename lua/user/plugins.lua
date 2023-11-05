@@ -2,7 +2,7 @@ require('packer').startup(function(use)
 
     use 'wbthomason/packer.nvim'
 
-    use 'savq/melange-nvim'
+    use { "catppuccin/nvim", as = "catppuccin" }
 
     use {
         'nvim-treesitter/nvim-treesitter',
@@ -24,6 +24,9 @@ require('packer').startup(function(use)
         requires = "kyazdani42/nvim-web-devicons",
     }
 
-    use 'vim-airline/vim-airline'
-    use 'vim-airline/vim-airline-themes'
+    use {
+        'nvim-lualine/lualine.nvim',
+        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
+    }
+
 end)
