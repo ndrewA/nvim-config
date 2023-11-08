@@ -9,8 +9,8 @@ require('lualine').setup {
 
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {'filename'},
-        lualine_c = {'diagnostics'},
+        lualine_b = {'branch', 'diff', 'diagnostics'},
+        lualine_c = {{'filename', path = 1}},
         lualine_x = {''},
         lualine_y = {''},
         lualine_z = {''},
