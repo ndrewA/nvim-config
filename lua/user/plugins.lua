@@ -1,32 +1,32 @@
-require('packer').startup(function(use)
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--depth=1",
+    "https://github.com/folke/lazy.nvim.git",
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
 
-    use 'wbthomason/packer.nvim'
+local installed, lazy = pcall(require, "lazy")
+if not installed then
+  return
+end
 
-    use { "catppuccin/nvim", as = "catppuccin" }
+lazy.setup(
+    {
+        { import = "plugins" },
+    },
 
-    use {
-        'nvim-treesitter/nvim-treesitter',
-        run = ':TSUpdate'
+    {
+        checker = {
+            enabled = true,
+            notify = false,
+        },
+        change_detection = {
+            notify = false,
+        },
     }
-
-    -- lsp
-    use 'neovim/nvim-lspconfig'
-    use 'hrsh7th/nvim-cmp'
-    use 'hrsh7th/cmp-nvim-lsp'
-
-    use {
-        'nvim-telescope/telescope.nvim',
-        requires = { {'nvim-lua/plenary.nvim'} }
-    }
-
-    use {
-        "folke/lsp-trouble.nvim",
-        requires = "kyazdani42/nvim-web-devicons",
-    }
-
-    use {
-        'nvim-lualine/lualine.nvim',
-        requires = { 'nvim-tree/nvim-web-devicons', opt = true }
-    }
-
-end)
+)
