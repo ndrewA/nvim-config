@@ -1,4 +1,3 @@
--- ~/.config/nvim/lua/lazy/trouble.lua
 return {
     "folke/trouble.nvim",
     config = function()
@@ -29,7 +28,7 @@ return {
             auto_close = true,
             auto_preview = true,
             auto_fold = false,
-            use_diagnostic_signs = true -- use the same signs as those used for diagnostics
+            use_diagnostic_signs = true
         }
 
         local opts = { noremap = true, silent = true }

@@ -9,7 +9,7 @@ vim.cmd[[ autocmd VimEnter * highlight Normal guibg=NONE ctermbg=NONE ]]
 
 -- save cursor position when formating, after a file save
 _G.clang_format = function()
-    local style_path = vim.fn.stdpath('config') .. "/config/.clang-format"
+    local style_path = vim.fn.stdpath('config') .. "/lua/utils/.clang-format"
     local cmd = string.format("%%!clang-format -style=file:%s", style_path)
 
     -- Save cursor position
@@ -49,4 +49,3 @@ vim.fn.timer_start(300000, function()
     vim.cmd('wa')
     vim.cmd('echo "(Autosaved)"')
 end, {['repeat'] = -1})
-
