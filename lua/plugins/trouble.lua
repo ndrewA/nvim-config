@@ -1,5 +1,7 @@
 return {
     "folke/trouble.nvim",
+
+	event = { "BufReadPre", "BufNewFile" },
     config = function()
         require("trouble").setup{
             height = 10,

@@ -1,13 +1,23 @@
 return {
     "nvim-treesitter/nvim-treesitter",
+
+	build = ":TSUpdate",
+	event = "bufWinEnter",
+
     config = function()
         require'nvim-treesitter.configs'.setup {
-            highlight = {
-                enable = true,
-            },
-            ensure_installed = {"cpp", "lua"},
+            modules = {
+                ensure_installed = {"cpp", "lua"},
+
+                sync_install = false,
+                auto_install = true,
+
+                highlight = {
+                    enable = true,
+                    additional_vim_regex_highlighting = false,
+                },
+            }
         }
+
     end,
-    event = "BufRead", -- This will load treesitter when you open a buffer
-    run = ":TSUpdate" -- This command is run after install/update
 }

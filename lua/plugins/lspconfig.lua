@@ -1,5 +1,8 @@
 return {
     "neovim/nvim-lspconfig",
+
+	event = { "BufReadPre", "BufNewFile" },
+
     config = function()
         require'lspconfig'.clangd.setup{
             cmd = {
@@ -14,17 +17,53 @@ return {
                 clangTidyChecks = "-*,modernize-*",
                 fallbackFlags = { "-std=c++20" }
             },
+
+        }
+
+        require'lspconfig'.lua_ls.setup {
+            on_init = function(client)
+            local path = client.workspace_folders[1].name
+            if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+                client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+                    Lua = {
+                        runtime = { version = 'LuaJIT' },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = { vim.env.VIMRUNTIME }
+                        }
+                    }
+                })
+                client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+
+                end
+                return true
+            end,
         }
 
         -- custom diagnostic symbols
-        vim.fn.sign_define('DiagnosticSignError', { text = '', texthl = 'DiagnosticSignError' })
-        vim.fn.sign_define('DiagnosticSignWarn', { text = '', texthl = 'DiagnosticSignWarn' })
-        vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSignInfo' })
-        vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
+        local signs = {
+            { name = "DiagnosticSignError", text = "" },
+            { name = "DiagnosticSignWarn", text = "" },
+            { name = "DiagnosticSignInfo", text = "" },
+            { name = "DiagnosticSignHint", text = "" },
+        }
+
+        for _, sign in ipairs(signs) do
+            vim.fn.sign_define(sign.name, { text = sign.text, texthl = sign.name })
+        end
 
         vim.diagnostic.config({
             virtual_text = false,
-            signs = true
+            signs = true,
+
+            float = {
+                    source = "always",
+                    border = "rounded",
+                    focusable = false,
+                    style = "minimal",
+                    header = "",
+                    prefix = "",
+            },
         })
 
         vim.o.updatetime = 250
@@ -41,6 +80,4 @@ return {
         keymap('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts) -- rename symbol
         keymap('n', '<leader>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts) -- code action
     end,
-
-    ft = {"c", "cpp", "objc", "objcpp"},
 }

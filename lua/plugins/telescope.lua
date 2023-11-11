@@ -1,8 +1,17 @@
 return {
     "nvim-telescope/telescope.nvim",
+
     dependencies = {
         "nvim-lua/plenary.nvim",
+        "nvim-tree/nvim-web-devicons",
+        { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+
+    keys = {
+        { "<leader>f", ":Telescope find_files<CR>" },
+        { "<leader>g", ":Telescope live_grep<CR>" },
+    },
+
     config = function()
         local telescope = require("telescope")
         local actions = require("telescope.actions")
@@ -30,30 +39,11 @@ return {
                 prompt_prefix = "  ",
 				selection_caret = "  ",
 				entry_prefix = "  ",
-				selection_strategy = "reset",
+				selection_strategy = "closest",
 				sorting_strategy = "descending",
-				layout_strategy = "horizontal",
 
-                mappings = {
-                    i = {
-                        ["<C-n>"] = actions.move_selection_next,
-                        ["<C-p>"] = actions.move_selection_previous,
-                        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                        ["<esc>"] = actions.close,
-                        ["<CR>"] = actions.select_default + actions.center,
-                    },
-                    n = {
-                        ["<C-n>"] = actions.move_selection_next,
-                        ["<C-p>"] = actions.move_selection_previous,
-                        ["<C-q>"] = actions.smart_send_to_qflist + actions.open_qflist,
-                    },
-                },
             },
+            require("telescope").load_extension("fzf")
         })
-
-        -- Key mappings
-        local opts = { noremap = true, silent = true }
-        vim.api.nvim_set_keymap('n', '<leader>f', ':Telescope find_files<CR>', opts)
-        vim.api.nvim_set_keymap('n', '<leader>g', ':Telescope live_grep<CR>', opts)
     end,
 }
