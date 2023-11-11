@@ -9,11 +9,20 @@ return {
 		"hrsh7th/cmp-nvim-lsp",
 		"hrsh7th/cmp-cmdline",
         "neovim/nvim-lspconfig",
+        "saadparwaiz1/cmp_luasnip",
+        "L3MON4D3/LuaSnip",
+        "rafamadriz/friendly-snippets",
 	},
 
     config = function()
         local cmp = require('cmp')
         cmp.setup({
+
+            snippet = {
+				expand = function(args)
+					require('luasnip').lsp_expand(args.body)
+				end,
+			},
             sources = {
                 { name = 'nvim_lsp' },
                 { name = 'luasnip' },

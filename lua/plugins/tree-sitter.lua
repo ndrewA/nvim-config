@@ -6,17 +6,18 @@ return {
 
     config = function()
         require'nvim-treesitter.configs'.setup {
-            modules = {
-                ensure_installed = {"cpp", "lua"},
+            ensure_installed = {"cpp", "lua"},
 
-                sync_install = false,
-                auto_install = true,
+            sync_install = false,
+			auto_install = true,
 
-                highlight = {
-                    enable = true,
-                    additional_vim_regex_highlighting = false,
-                },
-            }
+            modules = {},
+            ignore_install = {},
+
+            highlight = {
+                enable = true,
+                additional_vim_regex_highlighting = false,
+            },
         }
 
     end,
