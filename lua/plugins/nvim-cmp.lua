@@ -12,6 +12,7 @@ return {
         "saadparwaiz1/cmp_luasnip",
         "L3MON4D3/LuaSnip",
         "rafamadriz/friendly-snippets",
+        "onsails/lspkind.nvim",
 	},
 
     config = function()
@@ -28,6 +29,11 @@ return {
                 { name = 'luasnip' },
                 { name = 'buffer' },
             },
+
+            formatting = {
+				format = require('lspkind').cmp_format({ with_text = true, maxwidth = 50 }),
+			},
+
             mapping = {
                 ['<Tab>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
                 ['<S-Tab>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),

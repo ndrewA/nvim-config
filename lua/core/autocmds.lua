@@ -45,7 +45,7 @@ vim.cmd [[
 ]]
 
 -- save every 5 minutes
-vim.fn.timer_start(300000, function()
-    vim.cmd('wa')
-    vim.cmd('echo "(Autosaved)"')
-end, {['repeat'] = -1})
+-- vim.fn.timer_start(300000, function()
+--     vim.cmd('wa')
+--     vim.cmd('echo "(Autosaved)"')
+-- end, {['repeat'] = -1})

@@ -13,7 +13,7 @@ keymap('n', '<C-j>', "<C-w>j", opts)
 keymap('n', '<C-k>', "<C-w>k", opts)
 keymap('n', '<C-l>', "<C-w>l", opts)
 
--- navigate terma>ls
+-- navigate termals
 keymap('t', '<C-h>', "<C-\\><C-N><C-w>h", opts)
 keymap('t', '<C-j>', "<C-\\><C-N><C-w>j", opts)
 keymap('t', '<C-k>', "<C-\\><C-N><C-w>k", opts)
@@ -47,7 +47,6 @@ keymap("n", "<A-k>", ":m .-2<CR>==", opts)
 keymap('v', 'p', '"_dP', opts)
 
 -- normal mode in terminal mode
-keymap('t', '<C-c>', '<C-\\><C-n>', opts)
 keymap('t', '<Esc>', '<C-\\><C-n>', opts)
 
 -- surround selected text with bracktes
