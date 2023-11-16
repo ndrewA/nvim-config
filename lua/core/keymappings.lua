@@ -82,38 +82,3 @@ keymap('v', '<leader>(', ':lua vim.surround_with("(", ")")<CR>', opts)
 keymap('v', '<leader>{', ':lua vim.surround_with("{", "}")<CR>', opts)
 keymap('v', '<leader>[', ':lua vim.surround_with("[", "]")<CR>', opts)
 keymap('v', '<leader><', ':lua vim.surround_with("<", ">")<CR>', opts)
-
--- surround selected text with bracktes
-vim.surround_with = function(start_char, end_char)
-    local line_start = vim.fn.getpos("'<")[2]
-    local line_end = vim.fn.getpos("'>")[2]
-    local col_start = vim.fn.getpos("'<")[3]
-    local col_end = vim.fn.getpos("'>")[3]
-
-    -- adjust column end if in visual line mode
-    if vim.fn.visualmode() == "V" then
-        col_end = #vim.fn.getline(line_end)
-    end
-
-    -- if it's a multi-line selection
-    if line_start ~= line_end then
-        vim.cmd(string.format('call setline(%d, "%s" . getline(%d))', line_start, start_char, line_start))
-        vim.cmd(string.format('call setline(%d, getline(%d) . "%s")', line_end, line_end, end_char))
-    else
-        -- for single line selection
-        local line_content = vim.fn.getline(line_start)
-        local before = line_content:sub(1, col_start - 1)
-        local middle = line_content:sub(col_start, col_end)
-        local after = line_content:sub(col_end + 1)
-        vim.cmd(string.format('call setline(%d, "%s%s%s%s%s")', line_start, before, start_char, middle, end_char, after))
-    end
-
-    -- move the cursor to the closing bracket
-    vim.api.nvim_win_set_cursor(0, {line_end, col_end + 1})
-end
-
-keymap('v', 's(', ':lua vim.surround_with("(", ")")<CR>', opts)
-keymap('v', 's{', ':lua vim.surround_with("{", "}")<CR>', opts)
-keymap('v', 's[', ':lua vim.surround_with("[", "]")<CR>', opts)
-keymap('v', 's<', ':lua vim.surround_with("<", ">")<CR>', opts)
-keymap('v', 's/', ':lua vim.surround_with("/*", "*/")<CR>', opts)

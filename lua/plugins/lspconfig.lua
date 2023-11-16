@@ -29,7 +29,10 @@ return {
                         runtime = { version = 'LuaJIT' },
                         workspace = {
                             checkThirdParty = false,
-                            library = { vim.env.VIMRUNTIME }
+                            library = {
+                              vim.env.VIMRUNTIME,
+                              vim.fs.joinpath(vim.fn.stdpath("config"), "lua"),
+                            }
                         }
                     }
                 })
