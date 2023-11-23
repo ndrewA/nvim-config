@@ -43,9 +43,3 @@ vim.cmd [[
     autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
     autocmd BufWritePost * lua vim.diagnostic.show()
 ]]
-
--- save every 5 minutes
--- vim.fn.timer_start(300000, function()
---     vim.cmd('wa')
---     vim.cmd('echo "(Autosaved)"')
--- end, {['repeat'] = -1})

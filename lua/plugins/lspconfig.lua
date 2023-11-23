@@ -17,7 +17,6 @@ return {
                 clangTidyChecks = "-*,modernize-*",
                 fallbackFlags = { "-std=c++20" }
             },
-
         }
 
         require'lspconfig'.lua_ls.setup {

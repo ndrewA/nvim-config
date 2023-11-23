@@ -6,6 +6,7 @@ AlignEscapedNewlines: Right
 AlignOperands: DontAlign
 AlignTrailingComments: Leave
 AllowShortBlocksOnASingleLine: Empty
+AllowShortCaseLabelsOnASingleLine: true
 AllowShortFunctionsOnASingleLine: InlineOnly
 AllowShortIfStatementsOnASingleLine: Never
 AllowShortLambdasOnASingleLine: All

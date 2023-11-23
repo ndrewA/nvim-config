@@ -78,7 +78,7 @@ vim.surround_with = function(start_char, end_char)
     vim.api.nvim_win_set_cursor(0, {line_end, col_end + 1})
 end
 
-keymap('v', '<leader>(', ':lua vim.surround_with("(", ")")<CR>', opts)
-keymap('v', '<leader>{', ':lua vim.surround_with("{", "}")<CR>', opts)
-keymap('v', '<leader>[', ':lua vim.surround_with("[", "]")<CR>', opts)
-keymap('v', '<leader><', ':lua vim.surround_with("<", ">")<CR>', opts)
+keymap('v', 's(', ':lua vim.surround_with("(", ")")<CR>', opts)
+keymap('v', 's{', ':lua vim.surround_with("{", "}")<CR>', opts)
+keymap('v', 's[', ':lua vim.surround_with("[", "]")<CR>', opts)
+keymap('v', 's<', ':lua vim.surround_with("<", ">")<CR>', opts)
