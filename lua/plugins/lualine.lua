@@ -3,7 +3,7 @@ return {
     config = function()
         require('lualine').setup {
             options = {
-                theme = 'nightfly',
+                theme = 'catppuccin',
                 section_separators = "",
                 component_separators = "",
                 always_divide_middle = true,
@@ -15,7 +15,7 @@ return {
                 lualine_c = {{'filename', path = 1}},
                 lualine_x = {''},
                 lualine_y = {''},
-                lualine_z = {''},
+                lualine_z = {'filetype'},
             }
         }
     end,
