@@ -30,9 +30,8 @@ return {
                             checkThirdParty = false,
                             library = {
                               vim.env.VIMRUNTIME,
-                              vim.fs.joinpath(vim.fn.stdpath("config"), "lua"),
                             }
-                        }
+                        },
                     }
                 })
                 client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })

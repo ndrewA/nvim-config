@@ -43,3 +43,13 @@ vim.cmd [[
     autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
     autocmd BufWritePost * lua vim.diagnostic.show()
 ]]
+
+-- open terminal when leaving neovide
+if vim.g.neovide then
+    local function open_kitty_on_exit()
+        local cwd = vim.fn.getcwd()
+        local term_cmd = 'kitty --directory ' .. cwd
+        os.execute(term_cmd)
+    end
+    vim.api.nvim_create_autocmd("VimLeave", {callback = open_kitty_on_exit})
+end
