@@ -42,13 +42,12 @@ opt.wildmenu = true
 opt.wildmode = "longest:full,full"
 opt.path:append("**")
 
-vim.cmd("source ~/.cache/wal/colors-wal.vim")
-
 -- neovide settings
 if vim.g.neovide then
-    vim.g.neovide_transparency = 0.5
+    vim.g.neovide_transparency = 0.7
     vim.g.transparency = 1.0
     vim.g.neovide_theme = 'auto'
 
     vim.g.neovide_hide_mouse_when_typing = true
+    vim.g.noevide_scroll_animation_length = 0.1
 end

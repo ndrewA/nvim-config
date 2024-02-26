@@ -9,7 +9,7 @@ return {
             ensure_installed = {"cpp", "lua"},
 
             sync_install = false,
-			auto_install = true,
+    		auto_install = true,
 
             modules = {},
             ignore_install = {},
